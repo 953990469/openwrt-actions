@@ -3,12 +3,12 @@
 echo "Test custom.sh"
 
 version=`date "+%m.%d"`
-echo $0
+echo $1
 sed -i '92d'                                                                   package/system/opkg/Makefile
 sed -i '/lienol/d'                                                             package/default-settings/files/zzz-default-settings
 sed -i '/shadow/d'                                                             package/default-settings/files/zzz-default-settings
 sed -i "s/#sed/sed/g"                                                          package/default-settings/files/zzz-default-settings
-sed -i "s/openwrt.proxy.ustclug.org/raw.githubusercontent.com\/hyird\/openwrt-actions\/$0\/L20.$version/g"                        package/default-settings/files/zzz-default-settings
+sed -i "s/openwrt.proxy.ustclug.org/raw.githubusercontent.com\/hyird\/openwrt-actions\/$1\/L20.$version/g"                        package/default-settings/files/zzz-default-settings
 sed -i "s/https/L20.$version/g"                                                package/default-settings/files/zzz-default-settings
 sed -i  's/http/releases\\\/19.07\-SNAPSHOT/g'                                 package/default-settings/files/zzz-default-settings
 sed -i '/exit/d'                                                               package/default-settings/files/zzz-default-settings
