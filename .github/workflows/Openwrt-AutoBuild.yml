@@ -138,6 +138,7 @@ jobs:
         git config --global user.name 'bot'
         git config --global user.email 'bot@github.com'
         git push https://github.com/hyird/openwrt-actions.git  HEAD:${{matrix.target}}/L20.$version
+        rm -rf .git
         
         
     - name:  Pack packages_dir
