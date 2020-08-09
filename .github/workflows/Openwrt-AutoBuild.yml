@@ -130,13 +130,14 @@ jobs:
         
     - name: push bin_dir to branch
       run: |
+        version=`date "+%m.%d"`
         cd openwrt/bin/packages/bin
         git init
         git add .
         git commit -m 'upload'
         git config --global user.name 'bot'
         git config --global user.email 'bot@github.com'
-        git push https://github.com/hyird/openwrt-actions.git  HEAD:${{matrix.target}}
+        git push https://github.com/hyird/openwrt-actions.git  HEAD:${{matrix.target}}/L20.$version
         
         
     - name:  Pack packages_dir
