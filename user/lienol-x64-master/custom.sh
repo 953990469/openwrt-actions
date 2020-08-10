@@ -12,7 +12,7 @@ sed -i "s/openwrt.proxy.ustclug.org/openwrt.download/g"                         
 sed -i "s/https/L20.8.6/g"                                                package/default-settings/files/zzz-default-settings
 sed -i  's/http/snapshots/g'                                 package/default-settings/files/zzz-default-settings
 sed -i '/exit/d'                                                               package/default-settings/files/zzz-default-settings
-echo "sed -i \"s/19.07-SNAPSHOT/L20.$version/g\" /etc/openwrt_release " >>     package/default-settings/files/zzz-default-settings
+echo "sed -i \"s/snapshots/L20.$version/g\" /etc/openwrt_release " >>     package/default-settings/files/zzz-default-settings
 echo "exit 0" >>                                                               package/default-settings/files/zzz-default-settings
 cat package/default-settings/files/zzz-default-settings
 
